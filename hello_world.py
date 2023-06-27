@@ -144,8 +144,8 @@ def realized_vol_term_json(ticker):
 @app.route('/rrg')
 @app.route('/rrg/<rrg_set>')
 def rrg(rrg_set):
-    start_date = '2022-01-01'
-    end_date = datetime.today().strftime('%Y-%m-%d')
+    start_date = (datetime.now() + timedelta(days=-200)).strftime("%Y-%m-%d")
+    end_date = datetime.now().strftime("%Y-%m-%d")
     benchmark = 'SPY'
     num_hist = -10
 
